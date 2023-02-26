@@ -1,8 +1,9 @@
 import express from 'express';
 import mongoose from "mongoose";
-import cors from 'cors'
-
+import cors from 'cors';
 import router from './router.js';
+
+
 const app = express();                  //инициализируем експресс в приложение
 const PORT = 5000;                      //создаем порт для локалхоста, может быть любой
 app.use(cors({                       //снимаем cors политику. Обязательно вверху кода!

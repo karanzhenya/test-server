@@ -1,5 +1,3 @@
-import User from "./Users.js";
-import Users from "./Users.js";
 import UsersService from "./UsersService.js";
 
 //создается объект с методами для всех круд операции

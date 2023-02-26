@@ -1,9 +1,8 @@
-import User from "./Users.js";
 import Users from "./Users.js";
 
 class UsersService {
     async create(user) {
-        const createdUser = await User.create(user)
+        const createdUser = await Users.create(user)
         return createdUser;
     }
 
@@ -24,7 +23,7 @@ class UsersService {
         if (!user) {                                                                   //из бади запроса
             throw new Error(' ID не указан')                                           //проверяем наличие бади в запросе
         }
-        const updatedUser = await User.findByIdAndUpdate(user._id, user, {new: true})   //находим по id -> добавляем новый
+        const updatedUser = await Users.findByIdAndUpdate(user._id, user, {new: true})   //находим по id -> добавляем новый
         return updatedUser                                                              //объект юзера и ставим new, чтобы
     }
 
@@ -32,7 +31,7 @@ class UsersService {
         if (!id) {
             throw new Error('ID не указан')
         }
-        const deletedUser = await User.findByIdAndDelete(id)
+        const deletedUser = await Users.findByIdAndDelete(id)
         return deletedUser;
     }
 }
